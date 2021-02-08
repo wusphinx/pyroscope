@@ -120,8 +120,12 @@ function PyroscopeApp(props) {
         />
         {/* <FlameGraphRenderer /> */}
         <div className="container-container">
-          <ComparisonFlameGraphRenderer />
-          <ComparisonFlameGraphRenderer />
+          <ComparisonFlameGraphRenderer 
+            side={'left'}
+          />
+          <ComparisonFlameGraphRenderer 
+            side={'right'}
+          />
         </div>
         <Modal
           isOpen={state.shortcutsModalOpen}
