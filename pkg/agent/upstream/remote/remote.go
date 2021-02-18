@@ -132,6 +132,7 @@ func (u *Remote) uploadProfile(j *uploadJob) {
 		log.Error("Error happened when uploading a profile:", err)
 	}
 	if resp != nil {
+		defer resp.Body.Close()
 		_, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			log.Error("Error happened while reading server response:", err)
